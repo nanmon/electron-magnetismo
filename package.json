@@ -5,6 +5,7 @@
   "description": "Electron application boilerplate based on React, React Router, Webpack, React Hot Loader for rapid application development",
   "scripts": {
     "build": "concurrently \"yarn build-main\" \"yarn build-renderer\"",
+    "build-css": "node-sass-chokidar --include-path ./app --include-path ./node_modules app/ -o app/",
     "build-dll": "cross-env NODE_ENV=development node --trace-warnings -r babel-register ./node_modules/webpack/bin/webpack --config webpack.config.renderer.dev.dll.js --colors",
     "build-main": "cross-env NODE_ENV=production node --trace-warnings -r babel-register ./node_modules/webpack/bin/webpack --config webpack.config.main.prod.js --colors",
     "build-renderer": "cross-env NODE_ENV=production node --trace-warnings -r babel-register ./node_modules/webpack/bin/webpack --config webpack.config.renderer.prod.js --colors",
@@ -184,6 +185,7 @@
     "mini-css-extract-plugin": "^0.4.1",
     "minimist": "^1.2.0",
     "node-sass": "^4.9.2",
+    "node-sass-chokidar": "^1.3.3",
     "npm-logical-tree": "^1.2.1",
     "optimize-css-assets-webpack-plugin": "^5.0.0",
     "prettier": "^1.14.0",
@@ -207,18 +209,18 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.2.0",
+    "bulma": "^0.7.1",
+    "d3": "^3.5.17",
     "devtron": "^1.4.0",
     "electron-debug": "^2.0.0",
+    "function-plot": "^1.18.1",
     "history": "^4.7.2",
+    "lodash": "^4.17.10",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-hot-loader": "^4.3.4",
-    "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
-    "react-router-redux": "^5.0.0-alpha.6",
-    "redux": "^4.0.0",
-    "redux-thunk": "^2.3.0",
     "source-map-support": "^0.5.6"
   },
   "devEngines": {
